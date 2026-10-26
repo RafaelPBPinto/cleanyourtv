@@ -19,3 +19,4 @@ traces/
 *.aab
 launcher/hs_err_pid*.log
 launcher/replay_pid*.log
+launcher/app/src/sfpro/
