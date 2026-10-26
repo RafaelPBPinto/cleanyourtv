@@ -34,6 +34,11 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
     private final boolean singleRow;
     /** dock_band_all: in a single row, the band runs behind every app instead of the dock apps only. */
     private final boolean bandAll;
+    /**
+     * top_shelf: every row parks where the dock rests, so the band stays on that line instead of on the dock's apps.
+     * The rows scroll through it, and it reads as the band passing from row to row in step with the scroll.
+     */
+    private boolean followLine;
 
     /**
      * @param translucent the cinematic shelf's band: the artwork and the glow show through it.
@@ -85,6 +90,10 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
+    void followLine(boolean follow) {
+        followLine = follow;
+    }
+
     @Override
     public void onDraw(@NonNull Canvas c, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         if (!bandVisible) return;
@@ -93,12 +102,14 @@ public class DockDecoration extends RecyclerView.ItemDecoration {
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
             int pos = parent.getChildAdapterPosition(child);
-            if (pos < 0 || (!bandAll && pos >= dockSize)) continue;
+            if (pos < 0 || (!followLine && !bandAll && pos >= dockSize)) continue;
             RecyclerView.ViewHolder vh = parent.getChildViewHolder(child);
             View card = vh instanceof AppAdapter.Holder ? ((AppAdapter.Holder) vh).card : child.findViewById(R.id.card);
             if (card == null) continue;
             float l = child.getLeft() + card.getLeft();
-            float t = child.getTop() + card.getTop() + child.getTranslationY();
+            // On the line, a tile's top is where the dock's rests: the line, the dock's 6dp offset, the card's inset.
+            float t = followLine ? parent.getPaddingTop() + 6 * density + card.getTop()
+                    : child.getTop() + card.getTop() + child.getTranslationY();
             float r = l + card.getWidth();
             float b = t + card.getHeight();
             cardWidth = card.getWidth();

@@ -146,4 +146,25 @@
     <string name="race_countdown_hours">%1$dh %2$dmin</string>
     <string name="race_countdown_days">%1$dd %2$dh</string>
     <string name="last_opened">Aberto %1$s</string>
+    <!-- top_shelf: what a featured title is, before its year. -->
+    <string name="shelf_series">Série</string>
+    <string name="shelf_film">Filme</string>
+    <!-- top_shelf Stremio and YouTube: where an episode is, the time left, a video's views. -->
+    <string name="shelf_episode">T%1$d E%2$d</string>
+    <string name="shelf_left">faltam %1$d min</string>
+    <string name="shelf_views">%1$s visualizações</string>
+    <!-- top_shelf sports: a match or session under way, and when the next one starts. -->
+    <string name="shelf_live">AO VIVO</string>
+    <string name="shelf_today">Hoje</string>
+    <string name="shelf_tomorrow">Amanhã</string>
+    <string name="shelf_f1">Fórmula 1</string>
+    <string name="shelf_fp1">Treinos Livres 1</string>
+    <string name="shelf_fp2">Treinos Livres 2</string>
+    <string name="shelf_fp3">Treinos Livres 3</string>
+    <string name="shelf_sprint_quali">Qualificação Sprint</string>
+    <string name="shelf_sprint">Sprint</string>
+    <string name="shelf_quali">Qualificação</string>
+    <string name="shelf_race">Corrida</string>
+    <!-- A date more than a week away, as java.time.format.DateTimeFormatter writes it. -->
+    <string name="shelf_date_pattern" translatable="false">d \'de\' MMMM</string>
 </resources>

@@ -23,6 +23,16 @@
         android:visibility="gone"
         android:importantForAccessibility="no" />
 
+    <!-- top_shelf (TopShelf): the focused dock app's featured titles, full screen and sharp, under the scrim. -->
+    <ImageView
+        android:id="@+id/shelfArt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0"
+        android:visibility="gone"
+        android:importantForAccessibility="no" />
+
     <!-- Ambient glow in the colour of the focused dock app. -->
     <View
         android:id="@+id/ambient"
@@ -144,6 +154,68 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
             android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- top_shelf: the title's logo (or its name), what it is and a line of its synopsis, bottom-aligned above
+         the dock in code. Takes the hero's place while the focused app has titles. -->
+    <LinearLayout
+        android:id="@+id/shelfInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:orientation="vertical"
+        android:alpha="0"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/shelfLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="400dp"
+            android:maxHeight="80dp"
+            android:scaleType="fitStart"
+            android:importantForAccessibility="no"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/shelfTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="820dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="56sp"
+            android:fontFamily="@string/font_light"
+            android:letterSpacing="-0.02"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/shelfMeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="16dp"
+            android:singleLine="true"
+            android:textColor="#B3FFFFFF"
+            android:textSize="15sp"
+            android:letterSpacing="0.04"
+            android:fontFamily="@string/font_body" />
+
+        <TextView
+            android:id="@+id/shelfOverview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:maxWidth="580dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.15"
+            android:textColor="#CCFFFFFF"
+            android:textSize="15sp"
+            android:fontFamily="@string/font_light" />
     </LinearLayout>
 
     <LinearLayout

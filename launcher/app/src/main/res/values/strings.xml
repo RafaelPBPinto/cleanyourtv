@@ -151,4 +151,25 @@
     <!-- Cinematic top shelf (cinematic_home): the line under the focused dock app's name; %1$s is when it was
          last opened, e.g. "5 minutes ago" or "yesterday, 9:40 pm". -->
     <string name="last_opened">Last opened %1$s</string>
+    <!-- top_shelf: what a featured title is, before its year. -->
+    <string name="shelf_series">Series</string>
+    <string name="shelf_film">Film</string>
+    <!-- top_shelf Stremio and YouTube: where an episode is, the time left, a video's views. -->
+    <string name="shelf_episode">S%1$d E%2$d</string>
+    <string name="shelf_left">%1$d min left</string>
+    <string name="shelf_views">%1$s views</string>
+    <!-- top_shelf sports: a match or session under way, and when the next one starts. -->
+    <string name="shelf_live">LIVE</string>
+    <string name="shelf_today">Today</string>
+    <string name="shelf_tomorrow">Tomorrow</string>
+    <string name="shelf_f1">Formula 1</string>
+    <string name="shelf_fp1">Practice 1</string>
+    <string name="shelf_fp2">Practice 2</string>
+    <string name="shelf_fp3">Practice 3</string>
+    <string name="shelf_sprint_quali">Sprint Qualifying</string>
+    <string name="shelf_sprint">Sprint</string>
+    <string name="shelf_quali">Qualifying</string>
+    <string name="shelf_race">Race</string>
+    <!-- A date more than a week away, as java.time.format.DateTimeFormatter writes it. -->
+    <string name="shelf_date_pattern" translatable="false">d MMMM</string>
 </resources>

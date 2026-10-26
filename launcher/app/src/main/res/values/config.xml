@@ -291,6 +291,10 @@
     <!-- Wi-Fi and Settings as round icon-only buttons (the network name moves to the talkback description);
          Inputs keeps its label. -->
     <bool name="icon_only_buttons">false</bool>
+    <!-- Every top bar pill (Inputs, Wi-Fi, Reorder, App library, Settings) rests as a round icon and slides its label
+         out while focused. Overrides icon_only_buttons and icon_only_inputs. Can also be set with
+         "expand_on_focus": true in a theme's config.json. -->
+    <bool name="expand_on_focus">false</bool>
     <!-- The Inputs pill as a round icon button too (the label moves to the talkback description). -->
     <bool name="icon_only_inputs">false</bool>
     <!-- true colours the Wi-Fi pill's icon green while the TV is online and leaves it white while it is not (dark on
